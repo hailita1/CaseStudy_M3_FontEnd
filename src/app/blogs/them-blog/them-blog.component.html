@@ -24,7 +24,7 @@
           <div class="form-group">
             <label><span class="req">* </span> Thể loại: </label>
             <select type="text" name="tenDanhMuc" formControlName="id">
-              <option *ngFor="let i of blog">{{i.id}}</option>
+              <option *ngFor="let i of blog" value="{{i.id}}">{{i.name}}</option>
             </select>
           </div>
           <div class="form-group">

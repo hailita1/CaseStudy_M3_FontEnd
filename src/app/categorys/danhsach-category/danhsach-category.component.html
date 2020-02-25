@@ -1,1 +1,35 @@
-<p>danhsach-category works!</p>
+<div class="container">
+  <div class="row">
+    <div id="custom-search-input">
+      <div *ngIf="isShow"
+           class="alert {{ (isSuccess) ? 'alert-success' : 'alert-danger' }}"
+           role="alert">
+        {{message}}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row col-md-12 text-center col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Tên</th>
+        <th>Xóa</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let i of listCategory">
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>
+          <button class="btn btn-danger btn-xs" (click)="delete(i.id)"><span class="glyphicon glyphicon-remove"></span>
+            Xóa
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

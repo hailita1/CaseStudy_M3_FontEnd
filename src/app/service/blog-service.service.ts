@@ -45,4 +45,8 @@ export class BlogServiceService {
     };
     return this.httpClient.put<any>(`http://localhost:8080/api/blogs/` + id, blog);
   }
+
+  findAllByAuthor(authorName: string): Observable<any[]> {
+    return this.httpClient.get<any[]>('http://localhost:8080/' + '/findAllByAuthor?blog=' + authorName);
+  }
 }

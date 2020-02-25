@@ -11,22 +11,25 @@ import {SuaBlogComponent} from './blogs/sua-blog/sua-blog.component';
 import {DanhsachBlogComponent} from './blogs/danhsach-blog/danhsach-blog.component';
 import {ThemCategoryComponent} from './categorys/them-category/them-category.component';
 import {DanhsachCategoryComponent} from './categorys/danhsach-category/danhsach-category.component';
+import {ViewComponent} from './blogs/view/view.component';
 
 const routes: Routes = [
-    {
-      path: '', component: DanhsachBlogComponent
-    },
-    {
-      path: 'sua-blog/:id', component: SuaBlogComponent
-    },
-    {
-      path: 'them-blog', component: ThemBlogComponent
-    }, {
-      path: 'danh-sach-category', component: DanhsachCategoryComponent
-    }, {
-      path: 'them-category', component: ThemCategoryComponent
-    }
-  ]
+  {
+    path: '', component: DanhsachBlogComponent
+  },
+  {
+    path: 'sua-blog/:id', component: SuaBlogComponent
+  },
+  {
+    path: 'view-blog/:id', component: ViewComponent
+  },
+  {
+    path: 'them-blog', component: ThemBlogComponent
+  }, {
+    path: 'danh-sach-category', component: DanhsachCategoryComponent
+  }, {
+    path: 'them-category', component: ThemCategoryComponent
+  }]
 ;
 
 @NgModule({
@@ -38,7 +41,8 @@ const routes: Routes = [
     SuaBlogComponent,
     DanhsachBlogComponent,
     ThemCategoryComponent,
-    DanhsachCategoryComponent
+    DanhsachCategoryComponent,
+    ViewComponent,
   ],
   imports: [
     BrowserModule,

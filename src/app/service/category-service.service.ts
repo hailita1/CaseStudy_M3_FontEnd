@@ -14,7 +14,7 @@ export class CategoryServiceService {
     return this.httpClient.get<any[]>(`http://localhost:8080/api/categories`);
   }
 
-  findById(id): Observable<any> {
+  findCategoryById(id): Observable<any> {
     return this.httpClient.get<any>(`http://localhost:8080/api/categories/` + id);
   }
 

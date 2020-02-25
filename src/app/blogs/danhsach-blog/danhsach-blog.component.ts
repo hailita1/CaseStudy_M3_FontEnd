@@ -14,7 +14,7 @@ export class DanhsachBlogComponent implements OnInit {
   isShow = false;
   isSuccess = true;
   formGroup = new FormGroup({
-    categoryId: new FormControl()
+    authorName: new FormControl()
   });
 
   constructor(private blogService: BlogServiceService) {
@@ -51,9 +51,9 @@ export class DanhsachBlogComponent implements OnInit {
   }
 
   public search() {
-    // const id = this.formGroup.get('categoryId').value;
-    // this.categoryService.findAllCustomerByFirstName(id).subscribe(result => { // status: 200
-    //   this.categories = result;
-    // });
+    const name = this.formGroup.get('authorName').value;
+    this.blogService.findAllByAuthor(name).subscribe(result => { // status: 200
+      this.listBlog = result;
+    });
   }
 }

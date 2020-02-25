@@ -8,8 +8,8 @@
       </div>
       <form [formGroup]="formGroup">
         <div class="input-group col-md-12" style="text-align: center">
-          <input type="text" class="search-query form-control" placeholder="Tìm kiếm theo họ và tên đệm"
-                 formControlName="categoryId" style="width: 400px"/>
+          <input type="text" class="search-query form-control" placeholder="Tìm kiếm theo tên tác giả"
+                 formControlName="authorName" style="width: 400px"/>
           <span class="input-group-btn">
                                               <button class="btn btn-danger" type="button" (click)="search()"
                                                       style="width: 200px">
@@ -53,7 +53,8 @@
           </button>
         </td>
         <td>
-          <button class="btn btn-danger btn-xs" (click)="view(i.id)"><span class="glyphicon glyphicon"></span>
+          <button class="btn btn-danger btn-xs" routerLink='view-blog/{{i.id}}'><span
+            class="glyphicon glyphicon"></span>
             Xem chi tiết
           </button>
         </td>

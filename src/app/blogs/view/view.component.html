@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <div *ngIf="isShow"
+           class="alert {{ (isSuccess) ? 'alert-success' : 'alert-danger' }}"
+           role="alert">
+        {{message}}
+      </div>
+      <form [formGroup]="formGroup">
+        <fieldset>
+          <div class="form-group">
+            <label><span class="req">* </span> Tên tác giả </label>
+            <input class="form-control" type="text" name="tenDanhMuc" formControlName="blogAuthor" readonly/>
+          </div>
+          <div class="form-group">
+            <label><span class="req">* </span> Nội dung </label>
+            <textarea class="form-control" type="text" name="tenDanhMuc" formControlName="blogContent" readonly></textarea>
+          </div>
+          <div class="form-group">
+            <label><span class="req">* </span> Thể loại: </label>
+            <select type="text" name="tenDanhMuc" formControlName="categoryName" readonly>
+              <option *ngFor="let i of category" value="{{i.id}}" >{{i.name}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>
