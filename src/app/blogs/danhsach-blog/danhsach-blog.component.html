@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <div id="custom-search-input">
+      <div *ngIf="isShow"
+           class="alert {{ (isSuccess) ? 'alert-success' : 'alert-danger' }}"
+           role="alert">
+        {{message}}
+      </div>
+      <form [formGroup]="formGroup">
+        <div class="input-group col-md-12" style="text-align: center">
+          <input type="text" class="search-query form-control" placeholder="Tìm kiếm theo họ và tên đệm"
+                 formControlName="categoryId" style="width: 400px"/>
+          <span class="input-group-btn">
+                                              <button class="btn btn-danger" type="button" (click)="search()"
+                                                      style="width: 200px">
+                                                  Tìm kiếm
+                                              </button>
+                </span>
+        </div>
+        <br>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row col-md-12 text-center col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Tác giả</th>
+        <th>Nội dung ngắn</th>
+        <th>Thể loại</th>
+        <th>Xóa</th>
+        <th>Sửa</th>
+        <th>Xem</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let i of listBlog">
+        <td>{{i.id}}</td>
+        <td>{{i.author}}</td>
+        <td><textarea readonly style="width: 200px">{{i.content}}</textarea></td>
+        <td>{{i.category.name}}</td>
+        <td>
+          <button class="btn btn-danger btn-xs" (click)="delete(i.id)"><span class="glyphicon glyphicon-remove"></span>
+            Xóa
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-primary btn-xs" routerLink='sua-blog/{{i.id}}' (click)=" update(i.id)"><span
+            class="glyphicon glyphicon-remove"></span> Sửa
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-danger btn-xs" (click)="view(i.id)"><span class="glyphicon glyphicon"></span>
+            Xem chi tiết
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
